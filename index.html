@@ -5,41 +5,57 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<script src="./script.js"></script>
+
 	<title>Comaparing Star Wars Starships</title>
 </head>
 
 <body>
-	<h1>Starship Comparison</h1>
-
-	<h2>Select two starships to compare</h2>
-	<form>
-		<select id="starshipSelection" name="starships" size="1"></select>
-		<select id="starshipSelection" name="starships2" size="1"></select>
-	</form>
-	<button id="compare">Compare</button>
-
-	<table id="starshipsCompared">
-		<tr>
-			<th></th>
-			<th>Starship 1</th>
-			<th>Starship 2</th>
-		</tr>
-		<tr id="name">
-			<th>Name</th>
-		</tr>
-		<tr id="cost">
-			<th>Cost</th>
-		</tr>
-		<tr id="speed">
-			<th>Speed</th>
-		</tr>
-		<tr id="cargo">
-			<th>Cargo Size</th>
-		</tr>
-		<tr id="passengers">
-			<th>Passengers</th>
-		</tr>
-	</table>
+	<h1>Select two Starships from the dropdown lists to compare</h1>
+	<p>
+		<select id="starship1">
+			<option value="">Select</option>
+		</select>
+		<select id="starship2">
+			<option value="">Select</option>
+		</select>
+		<button id="compare">Compare</button>
+	</p>
+	<div>
+		<table border="1">
+			<tr>
+				<th></th>
+				<th>Starship 1</th>
+				<th>Starship 2</th>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td id="name1"></td>
+				<td id="name2"></td>
+			</tr>
+			<tr>
+				<td>Cost</td>
+				<td id="cost_in_credits1"></td>
+				<td id="cost_in_credits2"></td>
+			</tr>
+			<tr>
+				<td>Speed</td>
+				<td id="max_atmosphering_speed1"></td>
+				<td id="max_atmosphering_speed2"></td>
+			</tr>
+			<tr>
+				<td>Cargo Size</td>
+				<td id="cargo_capacity1"></td>
+				<td id="cargo_capacity2"></td>
+			</tr>
+			<tr>
+				<td>Passengers</td>
+				<td id="passengers1"></td>
+				<td id="passengers2"></td>
+			</tr>
+		</table>
+	</div>
 
 </body>
 
