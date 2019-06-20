@@ -6,14 +6,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+	<link rel="stylesheet" href="./style.css">
+
 	<script src="./script.js"></script>
 
 	<title>Comaparing Star Wars Starships</title>
 </head>
 
 <body>
-	<h1>Select two Starships from the dropdown lists to compare</h1>
-	<p>
+	<header>
+		<h1>Comaparing Starships</h1>
+		<h2>Select two Starships</h2>
+	</header>
+	<div class="select__wrapper">
 		<select id="starship1">
 			<option value="">Select</option>
 		</select>
@@ -21,42 +26,29 @@
 			<option value="">Select</option>
 		</select>
 		<button id="compare">Compare</button>
-	</p>
-	<div>
-		<table border="1">
-			<tr>
-				<th></th>
-				<th>Starship 1</th>
-				<th>Starship 2</th>
-			</tr>
-			<tr>
-				<td>Name</td>
-				<td id="name1"></td>
-				<td id="name2"></td>
-			</tr>
-			<tr>
-				<td>Cost</td>
-				<td id="cost_in_credits1"></td>
-				<td id="cost_in_credits2"></td>
-			</tr>
-			<tr>
-				<td>Speed</td>
-				<td id="max_atmosphering_speed1"></td>
-				<td id="max_atmosphering_speed2"></td>
-			</tr>
-			<tr>
-				<td>Cargo Size</td>
-				<td id="cargo_capacity1"></td>
-				<td id="cargo_capacity2"></td>
-			</tr>
-			<tr>
-				<td>Passengers</td>
-				<td id="passengers1"></td>
-				<td id="passengers2"></td>
-			</tr>
-		</table>
 	</div>
-
+	<div class="starShip__wrapper">
+		<div class="starShip">
+			<div class="image__wrapper">
+				<img id="image1" src="https://i.ytimg.com/vi/rkqwj5Q8TsQ/maxresdefault.jpg"></img>
+			</div>
+			<p>Name: <span id="name1"></span></p>
+			<p>Cost: <span id="cost_in_credits1"></span></p>
+			<p>Speed: <span id="max_atmosphering_speed1"></span></p>
+			<p>Cargo Size: <span id="cargo_capacity1"></span></p>
+			<p>Passengers: <span id="passengers1"></span></p>
+		</div>
+		<div class="starShip">
+			<div class="image__wrapper">
+				<img id="image2" src="https://i.ytimg.com/vi/rkqwj5Q8TsQ/maxresdefault.jpg"></img>
+			</div>
+			<p>Name: <span id="name2"></span></p>
+			<p>Cost: <span id="cost_in_credits2"></span></p>
+			<p>Speed: <span id="max_atmosphering_speed2"></span></p>
+			<p>Cargo Size: <span id="cargo_capacity2"></span></p>
+			<p>Passengers: <span id="passengers2"></span></p>
+		</div>
+	</div>
 </body>
 
 </html>
