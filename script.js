@@ -24,11 +24,27 @@ window.onload = () => {
 	});	
 
 	document.getElementById("compare").addEventListener('click',  function(){
-		run(gen).catch(function(err){
+		showLoader();
+		run(gen)
+		.then(function() {
+			hideLoader();
+		})
+		.catch(function(err){
+			hideLoader();
 				alert(err.message);
 		});
 	})
 };
+
+function showLoader() {
+	document.getElementById('loader1').style.display = "block";
+	document.getElementById('loader2').style.display = "block";
+}
+
+function hideLoader() {
+	document.getElementById('loader1').style.display = "none";
+	document.getElementById('loader2').style.display = "none";
+}
 
 function run(getFunc){
 	const genObject = getFunc();
@@ -74,9 +90,22 @@ function *gen(){
 	//fill results in the div
 	for (const i of attributes) {
 			document.getElementById(`${i}1`).innerHTML = ship1[i];
-			document.getElementById(`${i}1`).style.backgroundColor = (parseInt(ship1[i],10) > parseInt(ship2[i],10) ? "red" : "");
+			if(parseInt(ship1[i],10) > parseInt(ship2[i],10)){
+				document.getElementById(`${i}1`).style.color =  "yellowgreen";
+				document.getElementById(`${i}1arrowImg`).src = './icons/arrow-up.png';
+			}else if(parseInt(ship1[i],10) < parseInt(ship2[i],10)){
+				document.getElementById(`${i}1`).style.color =  "red";
+				document.getElementById(`${i}1arrowImg`).src = './icons/arrow-down.png';
+			}
 
 			document.getElementById(`${i}2`).innerHTML = ship2[i];
-			document.getElementById(`${i}2`).style.backgroundColor = (parseInt(ship2[i],10) > parseInt(ship1[i],10) ? "red" : "");
+			if(parseInt(ship2[i],10) > parseInt(ship1[i],10)){
+				document.getElementById(`${i}2`).style.color =  "yellowgreen";
+				document.getElementById(`${i}2arrowImg`).src = './icons/arrow-up.png';
+			}else if(parseInt(ship2[i],10) < parseInt(ship1[i],10)) {
+				document.getElementById(`${i}2`).style.color =  "red";
+				document.getElementById(`${i}2arrowImg`).src = './icons/arrow-down.png';
+			}
+			
 	}
 }
